@@ -819,9 +819,9 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:var(-
 .mnav.open{max-height:calc(100vh - 80px);overflow-y:auto}
 .mnav a{padding:11px 0;border-bottom:1px solid var(--line)}
 
-.hpi[data-i="0"] img{object-position:62% 55%}
-.hpi[data-i="1"] img{object-position:72% 45%}
-.hs[data-i="1"] .h1x .grad,.hs[data-i="1"] .h1x .grn{font-size:.8em}
+.hpi[data-i="0"] img{object-position:72% 45%}
+.hpi[data-i="1"] img{object-position:62% 55%}
+.hs[data-i="0"] .h1x .grad,.hs[data-i="0"] .h1x .grn{font-size:.8em}
 
 /* --- Denetim iyileştirmeleri --- */
 .skip{position:fixed;left:max(12px,env(safe-area-inset-left,0px));top:calc(env(safe-area-inset-top,0px) + 8px);z-index:100;padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff;font:600 14px var(--f-display);transform:translateY(-200%);transition:transform .2s}
@@ -844,6 +844,19 @@ input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="tr
 @media (prefers-reduced-motion:reduce){.motto .tr,.hph-s,.kc,.svt,.stepc,.svc,.rs{animation:none!important}}
 .hero .h1x .grad,.hero .h1x .grn{text-shadow:none}
 .svt b{text-transform:none;font-size:15px}
+
+/* Mobil: slayt yazıları beyaz ve okunaklı */
+@media (max-width:880px){
+ .hph{opacity:1!important}
+ .hph-o{background:linear-gradient(180deg,rgba(7,9,20,.78),rgba(7,9,20,.62) 45%,rgba(7,9,20,.85))!important}
+ .hph-t{opacity:.35}
+ .hero .h1x,.hero .lead,.hero .eyebrow{color:#fff!important;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+ .hero .h1x .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:#FF9A4A!important}
+ .hero .h1x .grn{color:#4CC3AE!important}
+ .hero .hdot::after{background:rgba(255,255,255,.35)}
+ .hero .btn-g{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(7,9,20,.35)}
+ .hero .hgrid{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px));padding-block:28px}
+}
 </style>
 
 </head>
@@ -1211,10 +1224,10 @@ function bindMap(){
 /* ---------- pages ---------- */
 const P={};
 const HSLIDES=[
- {a:L4('Yılın\n','Мы в Китае','We are in China','一年'),b:L4('365 günü |Çin’deyiz.','365 дней |в году.','365 days |a year.','365天|都在中国。'),
-  p:L4('Çin’deki ekibimiz sahada çalışır: fabrikaya gider, kaliteyi yüklemeden önce kontrol eder ve her gelişmeyi size zamanında bildirir. Siz uzakta olsanız da Çin tarafında işiniz durmaz.','Наша команда работает в Китае на месте: выезжает на фабрики, проверяет качество до загрузки и вовремя сообщает вам обо всём. Даже на расстоянии ваши дела в Китае не стоят на месте.','Our team works on the ground in China: visiting factories, checking quality before loading and keeping you updated on every step. Even from afar, your work in China never stops.','我们的团队常驻中国一线：走访工厂、装货前检验质量，并及时向您通报每一步进展。即使您身在远方，中国端的工作也从不停歇。')},
  {a:L4('Çin’deki gözünüz,\n','Ваши глаза в Китае,','Your eyes in China,','您在中国的眼睛，'),b:L4('tedarikte güvenilir |\nortağınız.','надёжный |партнёр в закупках.','your trusted |sourcing partner.','值得信赖的|采购伙伴。'),
   p:L4('Çin’den ürün tedarik sürecinde doğru üretici ve tedarikçi seçeneklerini araştırıyor, teklifleri karşılaştırmanıza ve sipariş adımlarını şeffaf biçimde yürütmenize destek oluyoruz. Belarus, Rusya, Kazakistan ve Kırgızistan’daki işletmeler için Çin ile güvenilir iş bağlantıları kuruyoruz.','Мы подбираем подходящих производителей и поставщиков в Китае, помогаем сравнить предложения и прозрачно провести все этапы заказа. Выстраиваем надёжные деловые связи с Китаем для компаний из Беларуси, России, Казахстана и Кыргызстана.','We research the right manufacturer and supplier options for sourcing from China, and help you compare quotes and run every order step transparently. We build reliable business connections with China for companies in Belarus, Russia, Kazakhstan and Kyrgyzstan.','我们在中国为您调研合适的制造商和供应商，帮助您比较报价，并透明地推进每一步订单。我们为白俄罗斯、俄罗斯、哈萨克斯坦和吉尔吉斯斯坦的企业建立与中国可靠的业务联系。')},
+ {a:L4('Yılın\n','Мы в Китае','We are in China','一年'),b:L4('365 günü |\nÇin’deyiz.','365 дней |в году.','365 days |a year.','365天|都在中国。'),
+  p:L4('Çin’deki ekibimiz sahada çalışır: fabrikaya gider, kaliteyi yüklemeden önce kontrol eder ve her gelişmeyi size zamanında bildirir. Siz uzakta olsanız da Çin tarafında işiniz durmaz.','Наша команда работает в Китае на месте: выезжает на фабрики, проверяет качество до загрузки и вовремя сообщает вам обо всём. Даже на расстоянии ваши дела в Китае не стоят на месте.','Our team works on the ground in China: visiting factories, checking quality before loading and keeping you updated on every step. Even from afar, your work in China never stops.','我们的团队常驻中国一线：走访工厂、装货前检验质量，并及时向您通报每一步进展。即使您身在远方，中国端的工作也从不停歇。')},
  {a:T.h1a,b:T.h1b,p:T.lead},
 ];
 let hsTimer=null;
@@ -1230,7 +1243,7 @@ function bindHero(){
  start();
 }
 P.home=()=>`
-<section class="hero"><div class="hph" aria-hidden="true">${[PHOTOS['hirdavat-endustriyel'],HERO_IMG2,HERO_IMG].map((src,i)=>`<div class="hpi${i===0?' on':''}" data-i="${i}"><img class="hph-b" src="${src}" alt=""><img class="hph-s" src="${src}" alt=""></div>`).join('')}<span class="hph-t"></span><span class="hph-o"></span></div><div class="wrap hgrid">
+<section class="hero"><div class="hph" aria-hidden="true">${[HERO_IMG2,PHOTOS['hirdavat-endustriyel'],HERO_IMG].map((src,i)=>`<div class="hpi${i===0?' on':''}" data-i="${i}"><img class="hph-b" src="${src}" alt=""><img class="hph-s" src="${src}" alt=""></div>`).join('')}<span class="hph-t"></span><span class="hph-o"></span></div><div class="wrap hgrid">
  <div>
   <div class="eyebrow">${t(T.eyebrow)}</div>
   <h1 class="vh">${t(SEO.home[0])}</h1>
@@ -1255,10 +1268,8 @@ P.home=()=>`
  <div class="eyebrow">${t(T.why_e)}</div><h2 class="h2">${t(T.why_h)}</h2><p class="lead">${t(T.why_p)}</p>
  ${whyGrid()}
 </div></section>
-<section class="band"><div class="wrap">
- <div class="eyebrow grn-e">${t(U.cats)}</div><h2 class="h2">${t(T.cat_h)}</h2><p class="lead">${t(T.cat_p)}</p>
- ${catGroups()}
-</div></section>
+<section class="band"><div class="wrap"><div class="eyebrow grn-e">${t(KP.s_e)}</div><h2 class="h2">${H3(t(KP.s_h1),t(KP.s_h2))}</h2>
+ <div class="kgrid">${CATS.map(katCard).join('')}</div></div></section>
 ${ctaBand()}`;
 
 const SV={
