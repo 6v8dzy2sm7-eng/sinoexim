@@ -995,6 +995,73 @@ html.sxi-lock,html.sxi-lock body{overflow:hidden}
 .sxi-pin.p-ts b{bottom:12px;left:12px}
 .sxi-pin.sxh.p-be b{top:12px;right:-16px}
 @media (prefers-reduced-motion:reduce){.sxi-pin::before,.sxi-svg .sxi-arc{animation:none!important}.sxi-map{transition:none}}
+.hero{touch-action:pan-y}
+/* Kişisel veri onayı + aydınlatma metni */
+#rf .fcons{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:10px;font-size:13px!important;line-height:1.5;color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;margin-top:6px;cursor:pointer}
+#rf .fcons input{flex:none;width:18px!important;height:18px!important;min-height:0!important;margin:2px 0 0!important;padding:0!important;accent-color:var(--accent);cursor:pointer;box-shadow:none}
+#rf .fcons input[aria-invalid="true"]{outline:2px solid var(--accent2);outline-offset:2px}
+#rf .fcons a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.privdoc{max-width:820px}
+.privdoc h2{font:700 clamp(17px,1.6vw,20px)/1.35 var(--f-display);margin:28px 0 8px;text-transform:none;letter-spacing:0}
+.privdoc h2:first-child{margin-top:0}
+.privdoc p{margin:0;line-height:1.7;color:var(--muted)}
+.privdoc p b{color:var(--fg)}
+.privdlg{padding:0;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--fg);width:min(760px,calc(100vw - 32px));max-height:min(86vh,900px)}
+.privdlg::backdrop{background:rgba(5,8,20,.7);backdrop-filter:blur(3px)}
+.privbox{display:flex;flex-direction:column;max-height:min(86vh,900px)}
+.privhd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.privhd h2{margin:0;font:700 clamp(17px,2vw,22px)/1.3 var(--f-display);text-transform:none;letter-spacing:0}
+.privx{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--fg);font-size:22px;line-height:1;cursor:pointer}
+.privdlg .privdoc{overflow:auto;padding:18px 22px;max-width:none}
+.privdlg .privdoc .lead{margin-bottom:8px;font-size:15px}
+.privft{padding:14px 22px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
+/* Çerez onayı */
+.ckb{position:fixed;z-index:120;left:max(16px,env(safe-area-inset-left,0px) + 16px);bottom:max(16px,env(safe-area-inset-bottom,0px) + 16px);width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;padding:20px 20px 18px;border-radius:16px;border:1px solid var(--line);background:color-mix(in srgb,var(--surface) 96%,transparent);backdrop-filter:blur(10px);color:var(--fg);box-shadow:0 18px 50px rgba(0,0,0,.35);opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s}
+.ckb.show{opacity:1;transform:none}
+.ckb h2{margin:0 0 8px;font:700 17px/1.3 var(--f-display);text-transform:none;letter-spacing:0}
+.ckb p{margin:0;font-size:14px;line-height:1.55;color:var(--muted)}
+.ckb p a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.ckset{margin-top:14px;display:grid;gap:8px}
+.ckset[hidden]{display:none}
+.ckrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);cursor:default}
+label.ckrow{cursor:pointer}
+.ckrow b{display:block;font-size:14px;text-transform:none;letter-spacing:0}
+.ckrow small{display:block;font-size:12px;line-height:1.45;color:var(--muted);margin-top:2px}
+.ckon,.ckoff{flex:none;font-size:12px;font-weight:600;color:var(--grn);white-space:nowrap}
+.ckoff{color:var(--muted)}
+.cksw{flex:none;appearance:none;-webkit-appearance:none;width:42px;height:24px;border-radius:99px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;margin:0}
+.cksw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.cksw:checked{background:var(--accent)}
+.cksw:checked::after{transform:translateX(18px)}
+.cksw:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ckbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
+.ckbtn{justify-content:center;padding:10px 8px!important;font-size:13px!important;min-height:42px;text-transform:none;letter-spacing:0}
+.ckbtn:not(.btn-p){background:transparent;border:1px solid var(--line);color:var(--fg)}
+.fb .ckl{background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+@media (max-width:760px){.ckb{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom,0px) + 12px);width:auto}.ck-open .xbr,.ck-open .totop{opacity:0!important;visibility:hidden}}
+@media (max-width:380px){.ckbtns{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ckb{transition:none}}
+/* Üst menü sığdırma (özellikle RU) */
+.ni>a,#hdcta{white-space:nowrap}
+html[lang="ru"] .ni>a{padding:10px 6px;font-size:13.5px}html[lang="ru"] #hdcta{padding:11px 13px;font-size:13.5px}html[lang="ru"] .hd{gap:10px}html[lang="ru"] .tools{gap:8px}
+@media (max-width:1200px){html[lang="ru"] .hd .btn-p{display:none}}
+@media (max-width:1100px){html[lang="ru"] .ni>a{padding:10px 6px;font-size:13.5px}html[lang="ru"] .hd{gap:10px}}
+@media (max-width:980px){html[lang="ru"] .ni>a{padding:10px 5px;font-size:13px}}
+@media (max-width:900px){html[lang="ru"] nav.main{display:none}html[lang="ru"] .burger{display:block}html[lang="ru"] .tools{margin-left:auto}html[lang="ru"] .mnav.open{display:block}}
+@media (max-width:860px){nav.main{display:none}.burger{display:block}.tools{margin-left:auto}.mnav.open{display:block}}
+.mnav a.mcta{display:flex;justify-content:center;align-items:center;gap:8px;width:100%;margin:20px 0 4px;padding:14px 22px;border:0;border-radius:10px;color:var(--onaccent);font-size:16px;text-align:center}
+body{margin:0}
+.hd .logo{min-width:0;flex:0 1 auto}.hd .logo img{max-width:100%}
+@media (max-width:400px){.hd{gap:10px}.tools{gap:6px}.lang button{padding:6px 7px}}
+/* Üst bar: sayfayla bütünleşik (ayraç yok) */
+header{border-bottom:0!important;transition:background-color .3s,box-shadow .3s,backdrop-filter .3s}
+body.at-top header{background:transparent!important;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+body:not(.at-top) header{box-shadow:0 10px 30px -18px rgba(0,0,0,.55)}
+:root[data-theme="light"] body:not(.at-top) header{box-shadow:0 10px 30px -20px rgba(15,18,38,.25)}
+header:has(.mnav.open){background:var(--bg)!important}
+.hero{margin-top:-72px;padding-top:144px}
+.hero .hph{top:92px}
+#app>section:first-child:not(.hero){margin-top:-72px;border-top:72px solid transparent;background-origin:border-box}
 </style>
 
 <div class="sxi" id="sxi" role="dialog" aria-modal="true" aria-labelledby="sxi-h" hidden>
@@ -1059,7 +1126,13 @@ try{const st=localStorage.getItem('sx-theme');if(st==='light'||st==='dark')theme
 const applyTheme=()=>{document.documentElement.setAttribute('data-theme',theme);const b=document.getElementById('thm');if(b){const lab=theme==='dark'?{tr:'Açık temaya geç',ru:'Светлая тема',en:'Switch to light theme',zh:'切换到浅色'}:{tr:'Koyu temaya geç',ru:'Тёмная тема',en:'Switch to dark theme',zh:'切换到深色'};b.setAttribute('aria-label',lab[lang]||lab.tr);b.title=lab[lang]||lab.tr;b.innerHTML=theme==='dark'?'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'}};
 document.documentElement.setAttribute('data-theme',theme);
 let lang='tr';
-try{const s=localStorage.getItem('sx-lang');if(LANGS.includes(s))lang=s;else{const n=(navigator.language||'').slice(0,2);if(LANGS.includes(n))lang=n;}}catch(e){}
+/* Dil: ziyaretçinin ülkesine göre (saat dilimi) — TR → Türkçe, BY/RU/KZ/KG → Rusça, diğerleri → İngilizce. Elle seçilen dil kalıcıdır. */
+function geoLang(){let z='';try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+ if(/^(Europe|Asia)\/Istanbul$/.test(z))return 'tr';
+ if(/^Europe\/(Minsk|Moscow|Kaliningrad|Samara|Volgograd|Saratov|Ulyanovsk|Astrakhan|Kirov|Simferopol)$/.test(z)||/^Asia\/(Almaty|Qostanay|Qyzylorda|Aqtobe|Aqtau|Atyrau|Oral|Bishkek|Yekaterinburg|Omsk|Novosibirsk|Barnaul|Tomsk|Novokuznetsk|Krasnoyarsk|Irkutsk|Chita|Yakutsk|Khandyga|Vladivostok|Ust-Nera|Magadan|Sakhalin|Srednekolymsk|Kamchatka|Anadyr)$/.test(z))return 'ru';
+ return 'en'}
+lang=geoLang();
+try{const s=localStorage.getItem('sx-lang');if(LANGS.includes(s))lang=s;}catch(e){}
 const t=o=>(o&&typeof o==='object'&&!Array.isArray(o))?(o[lang]??o.tr):o;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const EMAIL='info@sinoexim.by', PHONE='+7 931 394-30-71', WA='https://wa.me/79313943071';
@@ -1477,7 +1550,7 @@ function sxiInit(){
   setTimeout(()=>{hl.classList.remove('sxi-wait');hl.classList.add('sxi-land');c.style.opacity='0';setTimeout(()=>{c.remove();hl.classList.remove('sxi-land')},500)},1050);
   return 1100;
  };
- const close=()=>{if(!sxiOpen)return;sxiOpen=false;try{sessionStorage.setItem('sxi-seen','1')}catch(e){}document.documentElement.classList.remove('sxi-lock');const d=fly();el.classList.add('out');setTimeout(()=>{el.remove();const a=document.getElementById('app');if(a)a.focus({preventScroll:true});if(window.xbStart)window.xbStart()},RM()?0:Math.max(750,d))};
+ const close=()=>{if(!sxiOpen)return;sxiOpen=false;try{sessionStorage.setItem('sxi-seen','1')}catch(e){}document.documentElement.classList.remove('sxi-lock');const d=fly();el.classList.add('out');setTimeout(()=>{el.remove();const a=document.getElementById('app');if(a)a.focus({preventScroll:true});if(window.xbStart)window.xbStart();if(window.ckAfterIntro){window.ckAfterIntro();window.ckAfterIntro=null}},RM()?0:Math.max(750,d))};
  go.addEventListener('click',close);
  el.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Enter'){e.preventDefault();close()}if(e.key==='Tab'){e.preventDefault();go.focus()}});
  return true;
@@ -1532,7 +1605,7 @@ function xbInit(){
  document.getElementById('xbr-cta').addEventListener('click',()=>xbClose());
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!xbr.bub.hidden)xbClose(true)});
  xbBlink();
- let seen=false;try{seen=localStorage.getItem('xb-seen')==='1';localStorage.setItem('xb-seen','1')}catch(e){}
+ let seen=false;try{seen=localStorage.getItem('xb-seen')==='1';prefSet('xb-seen','1')}catch(e){}
  const start=()=>setTimeout(()=>{xbr.el.classList.add('xbr-in');if(!seen){xbReact('xbr-wave');setTimeout(()=>xbOpen(false),RM()?0:700)}},RM()?0:900);
  if(sxiOpen)window.xbStart=start;else start();
 }
@@ -1546,6 +1619,10 @@ function bindHero(){
  let hold=false;const hero=wrap.closest('.hero');if(hero){hero.addEventListener('mouseenter',()=>{hold=true;hero.classList.add('paused')});hero.addEventListener('mouseleave',()=>{hold=false;hero.classList.remove('paused')});hero.addEventListener('focusin',()=>{hold=true;hero.classList.add('paused')});hero.addEventListener('focusout',()=>{hold=false;hero.classList.remove('paused')})}
  const start=()=>{clearInterval(hsTimer);if(RM())return;hsTimer=setInterval(()=>{if(!document.body.contains(wrap)){clearInterval(hsTimer);return}if(hold||document.hidden)return;go(k+1)},7000)};
  dots.forEach(d=>d.addEventListener('click',()=>{go(+d.dataset.hs);start()}));
+ if(hero){let sx=0,sy=0,tr=false;
+  hero.addEventListener('touchstart',e=>{if(e.touches.length!==1){tr=false;return}tr=true;sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  hero.addEventListener('touchend',e=>{if(!tr)return;tr=false;const c=e.changedTouches[0],dx=c.clientX-sx,dy=c.clientY-sy;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){go(dx<0?k+1:k-1);start()}},{passive:true});
+  hero.addEventListener('touchcancel',()=>{tr=false},{passive:true})}
  start();
 }
 P.home=()=>`
@@ -2211,6 +2288,7 @@ P.iletisim=()=>`
   <label for="f-prod">${t(T.f_prod)} *<input id="f-prod" name="prod" required aria-required="true"></label>
   <label for="f-msg">${t(T.f_msg)}<textarea id="f-msg" name="msg"></textarea></label>
   <p id="f-err" role="alert" style="color:var(--accent2);font-size:14px" hidden>${t(T.f_req)}</p>
+  <label class="fcons" for="f-ok"><input type="checkbox" id="f-ok" name="ok" required aria-required="true"><span>${PV().consent}</span></label>
   <div class="fsub"><button class="btn btn-p" type="submit">${t(T.f_btn)}</button></div>
  </form><div id="f-out"></div></div>
  <aside class="ctas"><h3 class="ctsh">${t(CT.c_h)}</h3><div class="contact-li" style="margin-top:30px">
@@ -2244,18 +2322,191 @@ function renderChrome(route){
   `<h4>${t(U.services)}</h4>${SERVICES.map(s=>`<a href="#hizmet-${s.id}">${t(s.name)}</a>`).join('')}`+
   `<h4>${t(U.cats)}</h4>${CATS.map(c=>`<a href="#kategori-${c.id}">${t(c.name)}</a>`).join('')}`+
   `<h4>${t(U.how)}</h4><a href="#surec">${t(U.process)}</a><a href="#sss">${t(U.faq)}</a>`+
-  `<h4>${t(U.about)}</h4><a href="#biz-kimiz">${t(U.who)}</a><a href="#neden">${t(U.why)}</a><a href="#iletisim">${t(U.contact)}</a>`;
+  `<h4>${t(U.about)}</h4><a href="#biz-kimiz">${t(U.who)}</a><a href="#neden">${t(U.why)}</a><a href="#iletisim">${t(U.contact)}</a>`+
+  `<a class="btn btn-p mcta" href="#iletisim">${t(U.consult)} <span aria-hidden="true">→</span></a>`;
  document.getElementById('hdcta').textContent=t(U.consult);
  document.getElementById('lang').innerHTML=LANGS.map(l=>`<button type="button" data-l="${l}" class="${l===lang?'on':''}" aria-pressed="${l===lang}">${l.toUpperCase()}</button>`).join('');
  document.getElementById('foot').innerHTML=`<div class="fg">
   <div><a href="#home" class="logo">${LOGO}</a><p>${t(T.foot_p)}</p></div>
   <div><h4>${t(U.services)}</h4>${SERVICES.map(s=>`<a href="#hizmet-${s.id}">${t(s.name)}</a>`).join('')}</div>
   <div><h4>${t(U.cats)}</h4>${CATS.map(c=>`<a href="#kategori-${c.id}">${t(c.name)}</a>`).join('')}<a href="#kategoriler">${t(U.allcats)}</a></div>
-  <div><h4>${t(T.corp)}</h4><a href="#hakkimizda">${t(U.about)}</a><a href="#neden">${t(U.why)}</a><a href="#nasil-calisir">${t(U.how)}</a><a href="#sss">${t(U.faq)}</a><a href="#iletisim">${t(U.contact)}</a></div>
+  <div><h4>${t(T.corp)}</h4><a href="#hakkimizda">${t(U.about)}</a><a href="#neden">${t(U.why)}</a><a href="#nasil-calisir">${t(U.how)}</a><a href="#sss">${t(U.faq)}</a><a href="#iletisim">${t(U.contact)}</a><a href="#gizlilik">${PV().link}</a><a href="#cerezler">${CKQ().t}</a></div>
   <div><h4>${t(U.contact)}</h4><ul><li>${t(T.c_addrv)}</li><li style="user-select:all">${PHONE}</li><li style="user-select:all">${EMAIL}</li></ul></div>
- </div><div class="fb"><span>© 2026 SINOEXIM Global Partners. ${t(T.rights)}</span><span>sinoexim.by</span></div>`;
+ </div><div class="fb"><span>© 2026 SINOEXIM Global Partners. ${t(T.rights)}</span><span><button type="button" class="ckl" data-ck-open>${CKX().foot}</button> · sinoexim.by</span></div>`;
 }
 
+/* ---------- Kişisel veriler: aydınlatma metni (Belarus, Kanun No. 99-З) ---------- */
+const PRIV_OP={ru:'ООО «Синоэксим Глобал»',tr:'«Sinoeksim Global» Limited Şirketi (ООО «Синоэксим Глобал»)',en:'Sinoexim Global LLC (ООО «Синоэксим Глобал»)',zh:'Sinoexim Global有限责任公司（ООО «Синоэксим Глобал»）'};
+const PRIV={
+ru:{t:'Политика обработки персональных данных',
+lead:'Информация для пользователей формы обратной связи сайта sinoexim.by в соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите персональных данных».',
+s:[
+['1. Оператор','Общество с ограниченной ответственностью «Синоэксим Глобал» (ООО «Синоэксим Глобал»), торговое обозначение SINOEXIM Global Partners. Место нахождения: 220062, Республика Беларусь, г. Минск, пр-т Победителей, д. 135, пом. 732. E-mail: <b>info@sinoexim.by</b>, тел.: <b>+7 931 394-30-71</b>.'],
+['2. Какие данные мы обрабатываем','Имя; название компании; адрес электронной почты; номер телефона; страна; интересующая категория товаров; описание товара и текст сообщения. Пожалуйста, не указывайте в сообщении иные персональные данные, которые не нужны для рассмотрения запроса.'],
+['3. Цели обработки','Рассмотрение вашего запроса и ответ на него; подбор поставщиков и подготовка коммерческого предложения; заключение и исполнение договора по вашей инициативе. Без отдельного согласия мы не используем эти данные для рекламных рассылок.'],
+['4. Правовое основание и последствия отказа','Обработка осуществляется на основании вашего согласия, которое вы даёте, отмечая поле согласия в форме перед отправкой запроса. Согласие является добровольным. Если вы не даёте согласие, мы не сможем рассмотреть запрос, направленный через форму; вы можете связаться с нами по телефону или e-mail.'],
+['5. Как данные поступают к нам','Сайт не сохраняет данные формы и не передаёт их на сервер. Форма формирует текст сообщения, которое вы сами отправляете нам по электронной почте или через WhatsApp. При выборе WhatsApp сообщение передаётся через сторонний сервис (Meta Platforms, Inc., США), обработка в котором регулируется правилами этого сервиса.'],
+['6. Действия с данными','Сбор, систематизация, хранение, изменение, использование, предоставление, блокирование и удаление персональных данных — с использованием средств автоматизации и без их использования.'],
+['7. Передача третьим лицам и за рубеж','Для подбора поставщиков сведения о запросе, а при необходимости — ваши контактные данные, могут передаваться нашим партнёрам по закупкам в Китайской Народной Республике. КНР не относится к государствам, обеспечивающим надлежащий уровень защиты прав субъектов персональных данных. <b>Риски такой передачи:</b> законодательство КНР может не обеспечивать такой же уровень защиты, как законодательство Республики Беларусь; реализация ваших прав и обжалование действий получателя данных могут быть затруднены; к данным могут получить доступ органы иностранного государства. Отмечая поле согласия, вы соглашаетесь на такую передачу с учётом указанных рисков. Мы не продаём персональные данные.'],
+['8. Срок хранения и действия согласия','До достижения целей обработки, но не более 3 лет с даты вашего последнего обращения, если более длительный срок не требуется для исполнения договора или по законодательству. Согласие действует в течение этого срока либо до его отзыва.'],
+['9. Ваши права','Вы вправе: в любое время без объяснения причин отозвать согласие; получать информацию об обработке ваших персональных данных (ответ — в течение 5 рабочих дней); требовать внесения изменений в неполные, устаревшие или неточные данные; получать информацию о предоставлении ваших данных третьим лицам (бесплатно один раз в календарный год); требовать бесплатного прекращения обработки и (или) удаления данных, если отсутствуют иные основания для их обработки; обжаловать действия оператора в Национальный центр защиты персональных данных Республики Беларусь (cpd.by), а его решение — в суд. По остальным требованиям ответ направляется в течение 15 дней.'],
+['10. Как реализовать права','Направьте заявление в письменной форме по адресу оператора либо в виде электронного документа, подписанного электронной цифровой подписью. В заявлении укажите фамилию, собственное имя, отчество (при наличии), адрес места жительства (места пребывания), дату рождения, суть требований, а также поставьте личную подпись (ЭЦП). Отозвать согласие можно также в той форме, в которой оно было дано, — письмом на <b>info@sinoexim.by</b>.'],
+['11. Защита данных','Мы принимаем правовые, организационные и технические меры для защиты персональных данных от несанкционированного или случайного доступа, изменения, блокирования, копирования, распространения и удаления.'],
+['12. Редакция','Редакция от 07.11.2026. Политика может обновляться; актуальная версия всегда размещена на этой странице. При расхождении переводов приоритет имеет текст на русском языке.']],
+consent:'Я ознакомлен(а) с <a href="#gizlilik" data-priv>Политикой обработки персональных данных</a> и даю согласие ООО «Синоэксим Глобал» на обработку моих персональных данных, указанных в форме, в целях рассмотрения запроса, включая их передачу партнёрам в КНР.',
+err:'Чтобы отправить запрос, подтвердите согласие на обработку персональных данных.',link:'Политика обработки персональных данных',close:'Закрыть'},
+
+tr:{t:'Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni',
+lead:'sinoexim.by iletişim formunu kullananlar için, Belarus Cumhuriyeti’nin 7 Mayıs 2021 tarihli ve 99-З sayılı “Kişisel Verilerin Korunması Hakkında” Kanunu uyarınca hazırlanmıştır.',
+s:[
+['1. Veri sorumlusu (operatör)','«Sinoeksim Global» Limited Şirketi (ООО «Синоэксим Глобал»), ticari adı SINOEXIM Global Partners. Adres: 220062, Belarus Cumhuriyeti, Minsk, Pobediteley Bulvarı No. 135, oda 732. E-posta: <b>info@sinoexim.by</b>, telefon: <b>+7 931 394-30-71</b>.'],
+['2. İşlenen veriler','Ad; şirket adı; e-posta adresi; telefon numarası; ülke; ilgilenilen ürün kategorisi; ürün tanımı ve mesaj metni. Lütfen talebin değerlendirilmesi için gerekmeyen başka kişisel verileri mesajınıza yazmayın.'],
+['3. İşleme amaçları','Talebinizi değerlendirmek ve yanıtlamak; tedarikçi araştırması yapmak ve ticari teklif hazırlamak; sizin talebinizle sözleşme kurmak ve uygulamak. Ayrı onayınız olmadan bu verileri reklam gönderileri için kullanmayız.'],
+['4. Hukuki dayanak ve reddetmenin sonucu','Veriler, formu göndermeden önce onay kutusunu işaretleyerek verdiğiniz açık rızaya dayanarak işlenir. Rıza gönüllüdür. Rıza vermezseniz form üzerinden gönderilen talebi değerlendiremeyiz; bize telefon veya e-posta ile ulaşabilirsiniz.'],
+['5. Verilerin bize ulaşması','Site, form verilerini kaydetmez ve bir sunucuya göndermez. Form, mesaj metnini hazırlar; bu mesajı bize e-posta veya WhatsApp ile siz gönderirsiniz. WhatsApp’ı seçerseniz mesaj üçüncü taraf bir hizmet (Meta Platforms, Inc., ABD) üzerinden iletilir ve o hizmetin kurallarına tabidir.'],
+['6. Veriler üzerindeki işlemler','Toplama, sınıflandırma, saklama, değiştirme, kullanma, aktarma, engelleme ve silme — otomatik ve otomatik olmayan yollarla.'],
+['7. Üçüncü kişilere ve yurt dışına aktarım','Tedarikçi araştırması için talep bilgileri ve gerekirse iletişim bilgileriniz Çin Halk Cumhuriyeti’ndeki satın alma ortaklarımıza aktarılabilir. Çin, kişisel veri sahiplerinin haklarının yeterli düzeyde korunduğu ülkeler arasında yer almaz. <b>Bu aktarımın riskleri:</b> Çin mevzuatı Belarus mevzuatıyla aynı koruma düzeyini sağlamayabilir; haklarınızı kullanmanız ve alıcının işlemlerine itiraz etmeniz zorlaşabilir; yabancı devlet makamları verilere erişebilir. Onay kutusunu işaretleyerek bu riskleri bilerek aktarıma rıza vermiş olursunuz. Kişisel verileri satmayız.'],
+['8. Saklama ve rıza süresi','İşleme amaçlarına ulaşılıncaya kadar, ancak sözleşmenin ifası veya mevzuat daha uzun bir süre gerektirmedikçe son başvurunuzdan itibaren en fazla 3 yıl. Rıza bu süre boyunca veya geri alınıncaya kadar geçerlidir.'],
+['9. Haklarınız','Rızanızı istediğiniz zaman gerekçe göstermeden geri alabilir; verilerinizin işlenmesi hakkında bilgi isteyebilir (yanıt 5 iş günü içinde); eksik, güncel olmayan veya yanlış verilerin düzeltilmesini talep edebilir; verilerinizin üçüncü kişilere aktarılması hakkında bilgi alabilir (takvim yılında bir kez ücretsiz); başka bir işleme dayanağı yoksa işlemenin ücretsiz durdurulmasını ve/veya verilerin silinmesini isteyebilir; operatörün işlemlerine karşı Belarus Ulusal Kişisel Verileri Koruma Merkezi’ne (cpd.by), onun kararına karşı mahkemeye başvurabilirsiniz. Diğer taleplere 15 gün içinde yanıt verilir.'],
+['10. Haklarınızı nasıl kullanırsınız','Operatörün adresine yazılı olarak veya elektronik imzalı elektronik belge olarak başvurun. Başvuruda adınızı ve soyadınızı (varsa baba adınızı), ikamet adresinizi, doğum tarihinizi, talebinizin konusunu ve imzanızı belirtin. Rızanızı, verdiğiniz yolla da — <b>info@sinoexim.by</b> adresine e-posta göndererek — geri alabilirsiniz.'],
+['11. Verilerin korunması','Kişisel verileri yetkisiz veya kazara erişime, değiştirilmeye, engellenmeye, kopyalanmaya, yayılmaya ve silinmeye karşı korumak için hukuki, idari ve teknik önlemler alırız.'],
+['12. Sürüm','07.11.2026 tarihli sürüm. Metin güncellenebilir; güncel sürüm her zaman bu sayfadadır. Çeviriler arasında farklılık olması hâlinde Rusça metin esas alınır.']],
+consent:'<a href="#gizlilik" data-priv>Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</a>’ni okudum; formda verdiğim kişisel verilerimin talebimin değerlendirilmesi amacıyla, Çin’deki ortaklara aktarılması dahil, «Sinoeksim Global» Limited Şirketi tarafından işlenmesine rıza veriyorum.',
+err:'Talebi göndermek için kişisel verilerin işlenmesine rıza verdiğinizi onaylayın.',link:'Kişisel Verilerin Korunması',close:'Kapat'},
+
+en:{t:'Personal Data Processing Policy',
+lead:'Information for users of the contact form at sinoexim.by under Law of the Republic of Belarus No. 99-З of 7 May 2021 “On Personal Data Protection”.',
+s:[
+['1. Operator','Sinoexim Global LLC (ООО «Синоэксим Глобал»), trading as SINOEXIM Global Partners. Registered address: 135 Pobediteley Avenue, room 732, 220062 Minsk, Republic of Belarus. Email: <b>info@sinoexim.by</b>, phone: <b>+7 931 394-30-71</b>.'],
+['2. Data we process','Name; company name; email address; phone number; country; product category of interest; product description and message text. Please do not include other personal data that is not needed to handle your request.'],
+['3. Purposes','Reviewing and answering your request; finding suppliers and preparing a commercial offer; concluding and performing a contract at your request. We do not use this data for marketing without separate consent.'],
+['4. Legal basis and consequences of refusal','Processing is based on your consent, given by ticking the consent box before sending the form. Consent is voluntary. Without it we cannot handle a request sent through the form; you can still contact us by phone or email.'],
+['5. How the data reaches us','The website does not store form data or send it to a server. The form prepares a message that you send to us yourself by email or WhatsApp. If you choose WhatsApp, the message passes through a third-party service (Meta Platforms, Inc., USA) under that service’s own terms.'],
+['6. Processing operations','Collection, systematisation, storage, modification, use, disclosure, blocking and deletion — with and without automated means.'],
+['7. Disclosure and cross-border transfer','To find suppliers, request details and, where necessary, your contact details may be shared with our procurement partners in the People’s Republic of China. China is not among the countries that ensure an adequate level of protection of data subjects’ rights. <b>Risks of this transfer:</b> Chinese law may not provide the same level of protection as Belarusian law; exercising your rights and challenging the recipient’s actions may be difficult; foreign public authorities may gain access to the data. By ticking the consent box you agree to this transfer with these risks in mind. We do not sell personal data.'],
+['8. Retention and consent period','Until the purposes are achieved, but no longer than 3 years from your last contact, unless a longer period is required to perform a contract or by law. Consent is valid for this period or until withdrawn.'],
+['9. Your rights','You may: withdraw consent at any time without giving reasons; obtain information about the processing of your data (reply within 5 working days); require correction of incomplete, outdated or inaccurate data; obtain information on disclosure of your data to third parties (free once per calendar year); require free cessation of processing and/or deletion where there is no other legal basis; complain about the operator to the National Personal Data Protection Center of the Republic of Belarus (cpd.by) and appeal its decision in court. Other requests are answered within 15 days.'],
+['10. How to exercise your rights','Send a written application to the operator’s address or an electronic document signed with a digital signature, stating your full name, address of residence, date of birth, the substance of your request and your signature. You can also withdraw consent in the same way it was given — by email to <b>info@sinoexim.by</b>.'],
+['11. Security','We take legal, organisational and technical measures to protect personal data against unauthorised or accidental access, modification, blocking, copying, dissemination and deletion.'],
+['12. Version','Version of 07.11.2026. This policy may be updated; the current version is always on this page. In case of discrepancies between translations, the Russian text prevails.']],
+consent:'I have read the <a href="#gizlilik" data-priv>Personal Data Processing Policy</a> and consent to Sinoexim Global LLC processing the personal data I entered in this form to handle my request, including its transfer to partners in China.',
+err:'To send your request, please confirm your consent to personal data processing.',link:'Privacy Policy',close:'Close'},
+
+zh:{t:'个人数据处理政策',
+lead:'根据白俄罗斯共和国2021年5月7日第99-З号《个人数据保护法》，向sinoexim.by联系表单用户提供的信息。',
+s:[
+['1. 数据控制者（运营者）','Sinoexim Global有限责任公司（ООО «Синоэксим Глобал»），商业名称SINOEXIM Global Partners。地址：白俄罗斯共和国明斯克市胜利者大街135号732室，邮编220062。电子邮箱：<b>info@sinoexim.by</b>，电话：<b>+7 931 394-30-71</b>。'],
+['2. 处理的数据','姓名；公司名称；电子邮箱；电话号码；国家；感兴趣的产品类别；产品描述及留言内容。请勿在留言中填写处理询价所不需要的其他个人数据。'],
+['3. 处理目的','审核并答复您的询价；寻找供应商并准备商业报价；应您的要求订立和履行合同。未经单独同意，我们不会将这些数据用于营销推送。'],
+['4. 法律依据及拒绝的后果','我们依据您在提交表单前勾选同意框所给予的同意处理数据。同意是自愿的。如不同意，我们将无法处理通过表单提交的询价；您仍可通过电话或电子邮件联系我们。'],
+['5. 数据如何到达我们','本网站不保存表单数据，也不将其发送到服务器。表单仅生成消息文本，由您自行通过电子邮件或WhatsApp发送给我们。若选择WhatsApp，消息将经由第三方服务（Meta Platforms, Inc.，美国）传输，并受该服务条款约束。'],
+['6. 处理行为','收集、整理、存储、修改、使用、提供、封存和删除，包括自动化与非自动化方式。'],
+['7. 向第三方及跨境提供','为寻找供应商，询价信息以及必要时您的联系方式可能提供给我们在中华人民共和国的采购合作伙伴。中国不属于对数据主体权利提供充分保护水平的国家。<b>跨境提供的风险：</b>中国法律可能无法提供与白俄罗斯法律相同的保护水平；行使您的权利及对接收方提出申诉可能存在困难；外国政府机关可能获取这些数据。勾选同意框即表示您在知悉上述风险的情况下同意该跨境提供。我们不出售个人数据。'],
+['8. 保存期限及同意有效期','至实现处理目的为止，但自您最后一次联系之日起不超过3年，除非履行合同或法律要求更长期限。同意在此期间内或撤回前有效。'],
+['9. 您的权利','您有权：随时无需说明理由撤回同意；获取有关您数据处理的信息（5个工作日内答复）；要求更正不完整、过时或不准确的数据；获取您的数据向第三方提供的信息（每个日历年免费一次）；在无其他处理依据时要求免费停止处理和/或删除数据；向白俄罗斯共和国国家个人数据保护中心（cpd.by）投诉运营者的行为，并可就其决定向法院提起诉讼。其他请求在15天内答复。'],
+['10. 如何行使权利','请以书面形式寄至运营者地址，或以经电子数字签名的电子文件提交申请，注明姓名、居住地址、出生日期、请求内容并签名。您也可以按照给予同意的方式撤回同意，即发送电子邮件至<b>info@sinoexim.by</b>。'],
+['11. 数据安全','我们采取法律、组织和技术措施，保护个人数据免遭未经授权或意外的访问、修改、封存、复制、传播和删除。'],
+['12. 版本','2026年11月7日版本。本政策可能更新，最新版本始终发布于本页面。各译本如有歧义，以俄文文本为准。']],
+consent:'我已阅读<a href="#gizlilik" data-priv>《个人数据处理政策》</a>，并同意Sinoexim Global有限责任公司为处理我的询价而处理我在表单中填写的个人数据，包括将其提供给中国的合作伙伴。',
+err:'如需提交询价，请确认同意处理个人数据。',link:'隐私政策',close:'关闭'}};
+const PV=()=>PRIV[lang]||PRIV.en;
+const privBody=()=>PV().s.map(([h,p])=>`<h2>${h}</h2><p>${p}</p>`).join('');
+P.gizlilik=()=>pageHead(PV().t,PV().lead,[PV().t])+`<section class="band"><div class="wrap"><article class="privdoc">${privBody()}</article></div></section>`;
+function openPriv(){
+ let d=document.getElementById('privdlg');
+ if(!d){d=document.createElement('dialog');d.id='privdlg';d.className='privdlg';document.body.appendChild(d);
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-close]'))d.close()})}
+ d.setAttribute('aria-label',PV().t);
+ d.innerHTML=`<div class="privbox"><div class="privhd"><h2>${PV().t}</h2><button type="button" class="privx" data-close aria-label="${PV().close}">×</button></div><div class="privdoc"><p class="lead">${PV().lead}</p>${privBody()}</div><div class="privft"><button type="button" class="btn btn-p" data-close>${PV().close}</button></div></div>`;
+ if(d.showModal)d.showModal();else location.hash='#gizlilik';
+}
+
+/* ---------- Çerez onayı (cookie consent) ---------- */
+const CK_KEY='sx-consent',CK_V=1,CK_DAYS=365,CK_PREF=['sx-theme','sx-lang','xb-seen'];
+function ckGet(){try{const o=JSON.parse(localStorage.getItem(CK_KEY)||'null');if(o&&o.v===CK_V&&Date.now()-o.ts<CK_DAYS*864e5)return o}catch(e){}return null}
+function ckPref(){const c=ckGet();return !!(c&&c.pref)}
+function prefSet(k,v){if(!ckPref())return;try{localStorage.setItem(k,v)}catch(e){}}
+function ckSave(pref){
+ try{localStorage.setItem(CK_KEY,JSON.stringify({v:CK_V,pref:!!pref,ts:Date.now()}))}catch(e){}
+ if(pref){try{localStorage.setItem('xb-seen','1')}catch(e){}}
+ else CK_PREF.forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+ ckHide();document.dispatchEvent(new CustomEvent('sx:consent',{detail:{pref:!!pref}}));
+}
+const CKT={
+tr:{h:'Çerez tercihleri',p:'Sitemiz reklam veya takip çerezi kullanmaz. Tercihlerinizi (tema, dil) hatırlamak için tarayıcı depolaması kullanırız. Zorunlu olanlar her zaman açıktır; tercih depolamasına izin verebilir veya reddedebilirsiniz.',acc:'Tümünü kabul et',rej:'Reddet',set:'Ayarlar',save:'Seçimi kaydet',more:'Çerez Politikası',
+ c1:'Zorunlu',c1d:'Çerez tercihinizi ve giriş ekranının bir kez gösterilmesini hatırlar. Site bunlar olmadan düzgün çalışmaz.',on:'Her zaman açık',
+ c2:'Tercihler',c2d:'Seçtiğiniz temayı, dili ve X-BRIDGE karşılama mesajının gösterildiğini hatırlar.',
+ c3:'Analitik ve pazarlama',c3d:'Şu anda kullanılmıyor.',off:'Kullanılmıyor',foot:'Çerez ayarları'},
+ru:{h:'Настройки cookie',p:'Мы не используем рекламные и отслеживающие cookie. Для запоминания ваших настроек (тема, язык) мы используем хранилище браузера. Необходимые всегда включены; хранение настроек вы можете разрешить или отклонить.',acc:'Принять все',rej:'Отклонить',set:'Настроить',save:'Сохранить выбор',more:'Политика cookie',
+ c1:'Необходимые',c1d:'Запоминают ваш выбор по cookie и то, что вступительный экран уже показан. Без них сайт не работает корректно.',on:'Всегда включены',
+ c2:'Настройки',c2d:'Запоминают выбранную тему, язык и то, что приветствие X-BRIDGE уже показано.',
+ c3:'Аналитика и маркетинг',c3d:'В настоящее время не используются.',off:'Не используются',foot:'Настройки cookie'},
+en:{h:'Cookie preferences',p:'We do not use advertising or tracking cookies. We use browser storage to remember your preferences (theme, language). Necessary items are always on; you can allow or reject preference storage.',acc:'Accept all',rej:'Reject',set:'Settings',save:'Save choice',more:'Cookie Policy',
+ c1:'Necessary',c1d:'Remember your cookie choice and that the intro screen has been shown. The site does not work properly without them.',on:'Always on',
+ c2:'Preferences',c2d:'Remember your chosen theme, language and that the X-BRIDGE greeting has been shown.',
+ c3:'Analytics and marketing',c3d:'Not used at present.',off:'Not used',foot:'Cookie settings'},
+zh:{h:'Cookie 偏好设置',p:'我们不使用广告或跟踪类 Cookie。我们使用浏览器存储来记住您的偏好（主题、语言）。必要项始终开启；您可以允许或拒绝偏好存储。',acc:'全部接受',rej:'拒绝',set:'设置',save:'保存选择',more:'Cookie 政策',
+ c1:'必要',c1d:'记住您的 Cookie 选择以及开场画面已显示。没有它们网站无法正常运行。',on:'始终开启',
+ c2:'偏好',c2d:'记住您选择的主题、语言以及 X-BRIDGE 欢迎信息已显示。',
+ c3:'分析与营销',c3d:'目前未使用。',off:'未使用',foot:'Cookie 设置'}};
+const CKP={
+tr:{t:'Çerez Politikası',lead:'sinoexim.by’de hangi çerezlerin ve benzeri teknolojilerin kullanıldığını ve tercihlerinizi nasıl yönetebileceğinizi açıklar.',
+ s:[['1. Genel','Sitemiz reklam, takip veya analitik çerezi kullanmaz. Tercihlerinizi hatırlamak için çerez benzeri bir teknoloji olan tarayıcı depolaması (localStorage ve sessionStorage) kullanılır. Bu veriler yalnızca sizin cihazınızda tutulur, bize gönderilmez.'],
+ ['2. Zorunlu','<b>sx-consent</b> — çerez tercihiniz, 12 ay saklanır. <b>sxi-seen</b> — giriş ekranının bu oturumda gösterildiği bilgisi; tarayıcı kapatılınca silinir. Bunlar sitenin çalışması için gereklidir ve onay gerektirmez.'],
+ ['3. Tercihler (onayınızla)','<b>sx-theme</b> — açık/koyu tema; <b>sx-lang</b> — elle seçtiğiniz dil; <b>xb-seen</b> — X-BRIDGE karşılama mesajının gösterildiği bilgisi. Reddederseniz bu bilgiler kaydedilmez ve mevcut olanlar silinir; dil her ziyarette bulunduğunuz ülkeye göre otomatik seçilir.'],
+ ['4. Üçüncü taraf hizmetler','Yazı tipleri Google Fonts’tan, harita kütüphaneleri cdnjs (Cloudflare) üzerinden yüklenir; bu sırada tarayıcınız IP adresinizi bu hizmetlere iletir. Bu hizmetler sitemiz üzerinden çerez bırakmaz. WhatsApp, Google Haritalar ve Yandex Haritalar bağlantıları kendi gizlilik kurallarına tabi harici sitelerde açılır.'],
+ ['5. Tercihinizi değiştirme','Sayfanın altındaki “Çerez ayarları” bağlantısından seçiminizi istediğiniz zaman değiştirebilirsiniz. Ayrıca tarayıcınızın ayarlarından site verilerini silebilirsiniz.'],
+ ['6. İletişim','Sorularınız için: <b>info@sinoexim.by</b>. Kişisel verilerin işlenmesi hakkında ayrıntılar için Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni’ne bakın. Sürüm: 07.11.2026.']]},
+ru:{t:'Политика cookie',lead:'Какие cookie и аналогичные технологии используются на сайте sinoexim.by и как управлять своими настройками.',
+ s:[['1. Общие положения','Сайт не использует рекламные, отслеживающие и аналитические cookie. Для запоминания ваших настроек применяется хранилище браузера (localStorage и sessionStorage) — технология, аналогичная cookie. Эти данные хранятся только на вашем устройстве и нам не передаются.'],
+ ['2. Необходимые','<b>sx-consent</b> — ваш выбор по cookie, хранится 12 месяцев. <b>sxi-seen</b> — отметка о том, что вступительный экран показан в текущем сеансе; удаляется при закрытии браузера. Они нужны для работы сайта и не требуют согласия.'],
+ ['3. Настройки (с вашего согласия)','<b>sx-theme</b> — светлая/тёмная тема; <b>sx-lang</b> — язык, выбранный вручную; <b>xb-seen</b> — отметка о показе приветствия X-BRIDGE. Если вы отклоните их, эти данные не сохраняются, а имеющиеся удаляются; язык при каждом посещении выбирается автоматически по вашей стране.'],
+ ['4. Сторонние сервисы','Шрифты загружаются с Google Fonts, библиотеки карт — через cdnjs (Cloudflare); при этом ваш браузер передаёт этим сервисам IP-адрес. Через наш сайт эти сервисы cookie не устанавливают. Ссылки на WhatsApp, Google Карты и Яндекс Карты открывают внешние сайты со своими правилами конфиденциальности.'],
+ ['5. Изменение выбора','Вы можете в любой момент изменить выбор по ссылке «Настройки cookie» внизу страницы, а также удалить данные сайта в настройках браузера.'],
+ ['6. Контакты','Вопросы: <b>info@sinoexim.by</b>. Подробнее об обработке персональных данных — в Политике обработки персональных данных. Редакция от 07.11.2026.']]},
+en:{t:'Cookie Policy',lead:'Which cookies and similar technologies sinoexim.by uses and how you can manage your preferences.',
+ s:[['1. General','The site does not use advertising, tracking or analytics cookies. To remember your preferences it uses browser storage (localStorage and sessionStorage), a technology similar to cookies. This data stays on your device and is not sent to us.'],
+ ['2. Necessary','<b>sx-consent</b> — your cookie choice, kept for 12 months. <b>sxi-seen</b> — notes that the intro screen was shown in this session; deleted when the browser closes. These are needed for the site to work and do not require consent.'],
+ ['3. Preferences (with your consent)','<b>sx-theme</b> — light/dark theme; <b>sx-lang</b> — language you chose manually; <b>xb-seen</b> — notes that the X-BRIDGE greeting was shown. If you reject them, they are not saved and existing ones are deleted; the language is then chosen automatically by your country on every visit.'],
+ ['4. Third-party services','Fonts load from Google Fonts and map libraries from cdnjs (Cloudflare); your browser sends your IP address to these services when doing so. They do not set cookies through our site. Links to WhatsApp, Google Maps and Yandex Maps open external sites with their own privacy rules.'],
+ ['5. Changing your choice','You can change your choice at any time via “Cookie settings” at the bottom of the page, or delete site data in your browser settings.'],
+ ['6. Contact','Questions: <b>info@sinoexim.by</b>. For details on personal data processing, see the Personal Data Processing Policy. Version of 07.11.2026.']]},
+zh:{t:'Cookie 政策',lead:'说明 sinoexim.by 使用哪些 Cookie 及类似技术，以及您如何管理偏好。',
+ s:[['1. 概述','本网站不使用广告、跟踪或分析类 Cookie。为记住您的偏好，网站使用浏览器存储（localStorage 和 sessionStorage），这是一种类似 Cookie 的技术。这些数据仅保存在您的设备上，不会发送给我们。'],
+ ['2. 必要','<b>sx-consent</b> — 您的 Cookie 选择，保存 12 个月。<b>sxi-seen</b> — 记录本次会话已显示开场画面；关闭浏览器后删除。它们是网站运行所必需的，无需同意。'],
+ ['3. 偏好（经您同意）','<b>sx-theme</b> — 浅色/深色主题；<b>sx-lang</b> — 您手动选择的语言；<b>xb-seen</b> — 记录 X-BRIDGE 欢迎信息已显示。若您拒绝，这些数据不会保存，已有数据将被删除；每次访问时语言将根据您所在国家自动选择。'],
+ ['4. 第三方服务','字体从 Google Fonts 加载，地图库通过 cdnjs（Cloudflare）加载；此时您的浏览器会向这些服务发送 IP 地址。这些服务不会通过本网站设置 Cookie。WhatsApp、Google 地图和 Yandex 地图的链接会打开适用其自身隐私规则的外部网站。'],
+ ['5. 更改选择','您可随时通过页面底部的“Cookie 设置”更改选择，也可在浏览器设置中删除网站数据。'],
+ ['6. 联系方式','如有疑问：<b>info@sinoexim.by</b>。有关个人数据处理的详情，请参阅《个人数据处理政策》。2026年11月7日版本。']]}};
+const CKX=()=>CKT[lang]||CKT.en, CKQ=()=>CKP[lang]||CKP.en;
+P.cerezler=()=>pageHead(CKQ().t,CKQ().lead,[CKQ().t])+`<section class="band"><div class="wrap"><article class="privdoc">${CKQ().s.map(([h,p])=>`<h2>${h}</h2><p>${p}</p>`).join('')}<p style="margin-top:28px"><button type="button" class="btn btn-p" data-ck-open>${CKX().foot}</button></p></article></div></section>`;
+function ckHide(){const b=document.getElementById('ckb');if(b){b.classList.remove('show');setTimeout(()=>b.remove(),RM()?0:300)}document.body.classList.remove('ck-open')}
+function ckShow(settings){
+ let b=document.getElementById('ckb');if(b)b.remove();
+ const x=CKX(),pref=ckPref();
+ b=document.createElement('section');b.id='ckb';b.className='ckb';b.setAttribute('role','dialog');b.setAttribute('aria-modal','false');b.setAttribute('aria-labelledby','ckb-h');
+ b.innerHTML=`<h2 id="ckb-h">${x.h}</h2><p>${x.p} <a href="#cerezler">${x.more}</a></p>
+ <div class="ckset"${settings?'':' hidden'}>
+  <div class="ckrow"><div><b>${x.c1}</b><small>${x.c1d}</small></div><span class="ckon">${x.on}</span></div>
+  <label class="ckrow" for="ck-pref"><div><b>${x.c2}</b><small>${x.c2d}</small></div><input type="checkbox" id="ck-pref" class="cksw"${pref?' checked':''}></label>
+  <div class="ckrow"><div><b>${x.c3}</b><small>${x.c3d}</small></div><span class="ckoff">${x.off}</span></div>
+ </div>
+ <div class="ckbtns"><button type="button" class="btn ckbtn" data-ck="rej">${x.rej}</button><button type="button" class="btn ckbtn" data-ck="${settings?'save':'set'}">${settings?x.save:x.set}</button><button type="button" class="btn btn-p ckbtn" data-ck="acc">${x.acc}</button></div>`;
+ document.body.appendChild(b);document.body.classList.add('ck-open');
+ b.addEventListener('click',e=>{const k=e.target.closest('[data-ck]');if(!k)return;const a=k.dataset.ck;
+  if(a==='acc')ckSave(true);else if(a==='rej')ckSave(false);else if(a==='save')ckSave(document.getElementById('ck-pref').checked);
+  else if(a==='set'){b.querySelector('.ckset').hidden=false;k.dataset.ck='save';k.textContent=x.save;document.getElementById('ck-pref').focus()}});
+ requestAnimationFrame(()=>b.classList.add('show'));
+ if(settings)setTimeout(()=>{const s=document.getElementById('ck-pref');if(s)s.focus()},50);
+}
+function ckInit(){
+ document.addEventListener('click',e=>{if(e.target.closest('[data-ck-open]')){e.preventDefault();ckShow(true)}});
+ if(!ckGet()){CK_PREF.forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});if(sxiOpen)window.ckAfterIntro=()=>ckShow(false);else setTimeout(()=>ckShow(false),RM()?0:700)}
+}
+
+
+/* Üst bar sayfanın en üstündeyken şeffaf */
+function topInit(){const f=()=>document.body.classList.toggle('at-top',scrollY<8);f();addEventListener('scroll',f,{passive:true});addEventListener('hashchange',()=>setTimeout(f,0))}
 let pendingCat=null;
 const FX={mailbad:L4('E-posta adresini kontrol edin.','Проверьте адрес e-mail.','Please check the email address.','请检查邮箱地址。'),
  subj:L4('SINOEXIM — Ürün talebi','SINOEXIM — Запрос товара','SINOEXIM — Product request','SINOEXIM — 产品需求'),
@@ -2303,6 +2554,8 @@ function render(){
 function bindForm(){
  const f=document.getElementById('rf'); if(!f) return;
  if(pendingCat){f.cat.value=pendingCat;pendingCat=null}
+ f.addEventListener('click',e=>{if(e.target.closest('[data-priv]')){e.preventDefault();openPriv()}});
+ f.ok.addEventListener('change',()=>{if(f.ok.checked){f.ok.setAttribute('aria-invalid','false');const er=document.getElementById('f-err');if(er&&er.textContent===PV().err)er.hidden=true}});
  f.addEventListener('submit',e=>{
   e.preventDefault();
   const v=k=>f[k].value.trim();
@@ -2310,6 +2563,8 @@ function bindForm(){
   const bad=['name','mail','prod'].filter(k=>!v(k)||(k==='mail'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v(k))));
   ['name','mail','prod'].forEach(k=>f[k].setAttribute('aria-invalid',bad.includes(k)?'true':'false'));
   if(bad.length){const onlyMail=bad.length===1&&bad[0]==='mail'&&v('mail');err.textContent=onlyMail?t(FX.mailbad):t(T.f_req);err.hidden=false;f[bad[0]].focus();return}
+  if(!f.ok.checked){f.ok.setAttribute('aria-invalid','true');err.textContent=PV().err;err.hidden=false;f.ok.focus();return}
+  f.ok.setAttribute('aria-invalid','false');
   err.hidden=true;
   const sel=k=>f[k].options[f[k].selectedIndex].text;
   const txt=[`${t(T.f_name)}: ${v('name')}`,v('co')&&`${t(T.f_co)}: ${v('co')}`,`${t(T.f_mail)}: ${v('mail')}`,v('tel')&&`${t(T.f_tel)}: ${v('tel')}`,`${t(T.f_country)}: ${sel('country')}`,`${t(T.f_cat)}: ${sel('cat')}`,`${t(T.f_prod)}: ${v('prod')}`,v('msg')&&`${t(T.f_msg)}: ${v('msg')}`].filter(Boolean).join('\n');
@@ -2326,9 +2581,9 @@ function bindForm(){
 document.addEventListener('pointermove',e=>{const el=e.target.closest&&e.target.closest('.svt');if(el){const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}});
 document.addEventListener('click',e=>{
  const sk=e.target.closest('#skip');if(sk){e.preventDefault();const m=document.getElementById('app');m.focus();m.scrollIntoView();return}
- if(e.target.closest('#thm')){theme=theme==='dark'?'light':'dark';try{localStorage.setItem('sx-theme',theme)}catch(x){}applyTheme();return}
+ if(e.target.closest('#thm')){theme=theme==='dark'?'light':'dark';prefSet('sx-theme',theme);applyTheme();return}
  const lb=e.target.closest('#lang button');
- if(lb){lang=lb.dataset.l;try{localStorage.setItem('sx-lang',lang)}catch(x){}render();return}
+ if(lb){lang=lb.dataset.l;prefSet('sx-lang',lang);render();const ck=document.getElementById('ckb');if(ck)ckShow(!ck.querySelector('.ckset').hidden);return}
  const sc=e.target.closest('[data-sc]');if(sc){const c=document.getElementById('comm');c.scrollBy({left:+sc.dataset.sc*(c.clientWidth*0.8),behavior:'smooth'});return}
  const cb=e.target.closest('[data-cat]'); if(cb) pendingCat=cb.dataset.cat;
  const ml=e.target.closest('#mnav a, .logo, nav.main a');
@@ -2337,7 +2592,9 @@ document.addEventListener('click',e=>{
 });
 window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0)});
 render();
+topInit();
 sxiInit();
+ckInit();
 xbInit();
 totopInit();
 </script>
